@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/DataDog/datadog-go v4.8.3+incompatible
 	github.com/cactus/go-statsd-client/v5 v5.1.0
+	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475
 	github.com/smartystreets/goconvey v1.8.1
 	go.uber.org/goleak v1.2.1
 )
