@@ -4,6 +4,7 @@ package main
 
 import (
 	"flag"
+	metricCollector "github.com/vibexpro/hystrix-go/hystrix/metric_collector"
 	"log"
 	"math/rand"
 	"net/http"
@@ -11,10 +12,9 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/afex/hystrix-go/hystrix"
-	"github.com/afex/hystrix-go/hystrix/metric_collector"
-	"github.com/afex/hystrix-go/plugins"
-	"github.com/cactus/go-statsd-client/statsd"
+	"github.com/cactus/go-statsd-client/v5/statsd"
+	"github.com/vibexpro/hystrix-go/hystrix"
+	"github.com/vibexpro/hystrix-go/plugins"
 )
 
 const (

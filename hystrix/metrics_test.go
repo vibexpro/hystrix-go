@@ -5,9 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"go.uber.org/goleak"
-
 	. "github.com/smartystreets/goconvey/convey"
+	"go.uber.org/goleak"
 )
 
 func metricFailingPercent(p int) *metricExchange {
@@ -56,8 +55,8 @@ func TestErrorPercent(t *testing.T) {
 
 func TestMain(m *testing.M) {
 	goleak.VerifyTestMain(m,
-		goleak.IgnoreTopFunction("time.Sleep"),                                                             //tests that sleep in goroutines explicitly
-		goleak.IgnoreTopFunction("github.com/afex/hystrix-go/hystrix.TestReturnTicket.func1.1"),            //explicit leak
-		goleak.IgnoreTopFunction("github.com/afex/hystrix-go/hystrix.TestReturnTicket_QuickCheck.func1.1"), //explicit leak
+		goleak.IgnoreTopFunction("time.Sleep"),                                                                 //tests that sleep in goroutines explicitly
+		goleak.IgnoreTopFunction("github.com/vibexpro/hystrix-go/hystrix.TestReturnTicket.func1.1"),            //explicit leak
+		goleak.IgnoreTopFunction("github.com/vibexpro/hystrix-go/hystrix.TestReturnTicket_QuickCheck.func1.1"), //explicit leak
 	)
 }

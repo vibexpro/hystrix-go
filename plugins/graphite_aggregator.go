@@ -3,12 +3,11 @@
 package plugins
 
 import (
+	"github.com/rcrowley/go-metrics"
+	metricCollector "github.com/vibexpro/hystrix-go/hystrix/metric_collector"
 	"net"
 	"strings"
 	"time"
-
-	"github.com/afex/hystrix-go/hystrix/metric_collector"
-	"github.com/rcrowley/go-metrics"
 )
 
 var makeTimerFunc = func() interface{} { return metrics.NewTimer() }

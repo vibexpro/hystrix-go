@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	metricCollector "github.com/afex/hystrix-go/hystrix/metric_collector"
-	"github.com/afex/hystrix-go/hystrix/rolling"
+	metricCollector "github.com/vibexpro/hystrix-go/hystrix/metric_collector"
+	"github.com/vibexpro/hystrix-go/hystrix/rolling"
 )
 
 type commandExecution struct {

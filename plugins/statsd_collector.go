@@ -1,12 +1,12 @@
 package plugins
 
 import (
+	"github.com/cactus/go-statsd-client/v5/statsd"
 	"log"
 	"strings"
 	"time"
 
-	"github.com/afex/hystrix-go/hystrix/metric_collector"
-	"github.com/cactus/go-statsd-client/statsd"
+	"github.com/vibexpro/hystrix-go/hystrix/metric_collector"
 )
 
 // StatsdCollector fulfills the metricCollector interface allowing users to ship circuit
@@ -76,7 +76,7 @@ func InitializeStatsdCollector(config *StatsdCollectorConfig) (*StatsdCollectorC
 	c, err := statsd.NewBufferedClient(config.StatsdAddr, config.Prefix, 1*time.Second, flushBytes)
 	if err != nil {
 		log.Printf("Could not initiale buffered client: %s. Falling back to a Noop Statsd client", err)
-		c, _ = statsd.NewNoopClient()
+		c = &statsd.Client{}
 	}
 	return &StatsdCollectorClient{
 		client:     c,
